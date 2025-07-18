@@ -1,4 +1,5 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Data;
+using Asp.netCore_FinSharkProjAPI.Mappers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
 
         [HttpGet]
         public IActionResult GetAll() { 
-            var stocks = context.Stocks.ToList();
+            var stocks = context.Stocks.ToList().Select(s=>s.ToStockDto());
             if (stocks == null)
             {
                 return NotFound("No stocks found.");
@@ -32,7 +33,7 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             {
                 return NotFound($"Stock with ID {id} not found.");
             }
-            return Ok(stock);
+            return Ok(stock.ToStockDto());
         }
     }
 }
