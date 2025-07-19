@@ -1,4 +1,5 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Data;
+using Asp.netCore_FinSharkProjAPI.Dtos.Stock;
 using Asp.netCore_FinSharkProjAPI.Mappers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,5 +36,46 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             }
             return Ok(stock.ToStockDto());
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] CreateStockRequestDto stockDto)
+        {
+            if (stockDto == null)
+            {
+                return BadRequest("Invalid stock data.");
+            }
+            var stock = stockDto.ToStockFromCreateDto(); // Convert DTO to Model
+            context.Stocks.Add(stock); // Add the stock to the context
+            context.SaveChanges();
+            return CreatedAtAction(nameof(GetById), new { id = stock.Id }, stock.ToStockDto()); // Return the created stock as a DTO
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody] UpdateStockRequestDto updateDto)
+        {
+            var stockModel = context.Stocks.FirstOrDefault(s => s.Id == id);
+            if (stockModel is null)
+                return NotFound($"Stock with ID {id} not found.");
+
+            if (updateDto is null)
+                return BadRequest("Invalid stock data.");
+
+            stockModel.UpdateFromDto(updateDto);  // 🔄 Use the extension method
+
+            context.SaveChanges();
+            return Ok(stockModel.ToStockDto());   // 🔁 Return updated DTO
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var stockModel = context.Stocks.FirstOrDefault(s => s.Id == id);
+            if (stockModel is null)
+                return NotFound($"Stock with ID {id} not found.");
+            context.Stocks.Remove(stockModel);
+            context.SaveChanges();
+            return NoContent(); // 204 No Content
+        }
+
     }
 }
