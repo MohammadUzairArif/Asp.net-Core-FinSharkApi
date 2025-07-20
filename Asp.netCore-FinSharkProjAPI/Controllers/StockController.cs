@@ -29,7 +29,7 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             {
                 return NotFound("No stocks found.");
             }
-            return Ok(stocks);
+            return Ok(stockDtos);
         }
 
         [HttpGet("{id}")]
