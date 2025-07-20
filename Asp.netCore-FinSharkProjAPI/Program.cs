@@ -1,4 +1,6 @@
 using Asp.netCore_FinSharkProjAPI.Data;
+using Asp.netCore_FinSharkProjAPI.Interfaces;
+using Asp.netCore_FinSharkProjAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,8 @@ var config = provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<ApplicationDbContext>(items =>
     items.UseSqlServer(config.GetConnectionString("dbcs")));
 
+
+builder.Services.AddScoped<IStockRepository, StockRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
