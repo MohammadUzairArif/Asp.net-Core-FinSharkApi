@@ -1,4 +1,5 @@
-﻿namespace Asp.netCore_FinSharkProjAPI.Dtos.Stock
+﻿
+namespace Asp.netCore_FinSharkProjAPI.Dtos.Stock
 {
     public class CreateStockRequestDto
     {
@@ -8,5 +9,6 @@
         public decimal LastDiv { get; set; }
         public string Industry { get; set; } = string.Empty;
         public long MarketCap { get; set; }
+        public List<Models.Comment> Comments { get; internal set; }
     }
 }

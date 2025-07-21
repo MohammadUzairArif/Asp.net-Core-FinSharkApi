@@ -13,9 +13,22 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
         {
             this.context = context;
         }
+
+
         public async Task<List<Comment>> GetAllCommentsAsync()
         {
            return await context.Comments.ToListAsync();
+        }
+
+        public async Task<Comment?> GetCommentByIdAsync(int id)
+        {
+            return await context.Comments.FindAsync(id);
+        }
+        public async Task<Comment> CreateAsync(Comment commentModel)
+        {
+           await context.Comments.AddAsync(commentModel);
+          await context.SaveChangesAsync();
+              return commentModel;
         }
     }
 }

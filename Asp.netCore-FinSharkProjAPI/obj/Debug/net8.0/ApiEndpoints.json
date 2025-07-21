@@ -10,6 +10,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.CommentController",
+    "Method": "GetById",
+    "RelativePath": "api/Comment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.CommentController",
+    "Method": "CreateComment",
+    "RelativePath": "api/Comment/{stockId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stockId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentDto",
+        "Type": "Asp.netCore_FinSharkProjAPI.Dtos.Comment.CreateCommentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.StockController",
     "Method": "GetAll",
     "RelativePath": "api/Stock",

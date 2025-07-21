@@ -145,3 +145,7 @@ C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkPr
 C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\obj\Debug\net8.0\Asp.netCore-FinSharkProjAPI.pdb
 C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\obj\Debug\net8.0\Asp.netCore-FinSharkProjAPI.genruntimeconfig.cache
 C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\obj\Debug\net8.0\ref\Asp.netCore-FinSharkProjAPI.dll
+C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\PMLS\Desktop\Asp.net\Asp.netCore-FinSharkProjAPI\Asp.netCore-FinSharkProjAPI\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

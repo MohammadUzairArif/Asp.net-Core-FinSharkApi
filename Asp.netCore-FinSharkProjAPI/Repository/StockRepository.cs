@@ -17,12 +17,12 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
         }
         public async Task<List<Stock>> GetAllStocksAsync()
         {
-            return await context.Stocks.ToListAsync();
+            return await context.Stocks.Include(c=> c.Comments).ToListAsync();
         }
 
         public async Task<Stock?> GetStockByIdAsync(int id)
         {
-            return await context.Stocks.FindAsync(id);
+            return await context.Stocks.Include(c => c.Comments).FirstOrDefaultAsync(i=> i.Id == id);
         }
 
 
@@ -61,6 +61,9 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
             return stockModel; // Return the deleted stock model
         }
 
-
+        public Task<bool> StockExists(int id)
+        {
+            return context.Stocks.AnyAsync(s => s.Id == id);
+        }
     }
 }

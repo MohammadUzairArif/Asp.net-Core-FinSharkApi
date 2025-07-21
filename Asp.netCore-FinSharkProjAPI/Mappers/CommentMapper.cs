@@ -17,7 +17,8 @@ namespace Asp.netCore_FinSharkProjAPI.Mappers
            };
        }
        */
-        public static CommentDto ToCommentDto(this Comment commentModel) { 
+        public static CommentDto ToCommentDto(this Comment commentModel)
+        {
             return new CommentDto
             {
                 Id = commentModel.Id,
@@ -27,5 +28,28 @@ namespace Asp.netCore_FinSharkProjAPI.Mappers
                 StockId = commentModel.StockId
             };
         }
+
+        /* DTO → Model
+        public static ModelName ToModel(this ModelNameDto dto)
+        {
+            return new ModelName
+            {
+                Id = dto.Id,
+                Property1 = dto.Property1,
+                Property2 = dto.Property2
+                // Map remaining properties
+            };
+        }
+        */
+        public static Comment ToCommentFromCreate(this CreateCommentDto commentDto, int stockId)
+        {
+            return new Comment
+            {
+                Title = commentDto.Title,
+                Content = commentDto.Content,
+                StockId = stockId
+            };
+        }
+
     }
 }
