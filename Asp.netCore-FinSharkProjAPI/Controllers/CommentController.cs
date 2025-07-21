@@ -3,6 +3,7 @@ using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 
 namespace Asp.netCore_FinSharkProjAPI.Controllers
 {
@@ -54,6 +55,28 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
              await commentRepo.CreateAsync(commentModel); // Save the comment using the repository
             // For now, we will just return the created comment
             return CreatedAtAction(nameof(GetById), new { id = commentModel.Id }, commentModel.ToCommentDto());
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateComment(int id, [FromBody] UpdateCommentRequestDto updateDto)
+        {
+            var comment = await commentRepo.UpdateAsync(id,updateDto.ToCommentFromUpdateDto());
+
+            if (comment == null)
+            {
+                return NotFound("Comment not found");
+            }
+             return Ok(comment.ToCommentDto()); // Convert to DTO
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteComment(int id)
+        {
+            var comment = await commentRepo.DeleteAsync(id);
+            if (comment == null)
+            {
+                return NotFound("Comment not found");
+            }
+            return NoContent(); // Return 204 No Content on successful deletion
         }
     }
 }
