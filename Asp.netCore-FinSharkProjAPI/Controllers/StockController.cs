@@ -1,5 +1,6 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Data;
 using Asp.netCore_FinSharkProjAPI.Dtos.Stock;
+using Asp.netCore_FinSharkProjAPI.Helpers;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
 using Microsoft.AspNetCore.Http;
@@ -22,12 +23,12 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll() {
+        public async Task<IActionResult> GetAll([FromQuery] QueryObject query) {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var stocks = await stockRepo.GetAllStocksAsync();
+            var stocks = await stockRepo.GetAllStocksAsync(query);
             var stockDtos = stocks.Select(s => s.ToStockDto());
             if (stocks == null)
             {

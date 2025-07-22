@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Asp.netCore-FinSharkProjAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f33a954912fbdd4d56ea4ee1d0d7b207af432cfa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27395962ab8f889ce4ae6c653e9844cac8749dde")]
 [assembly: System.Reflection.AssemblyProductAttribute("Asp.netCore-FinSharkProjAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Asp.netCore-FinSharkProjAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

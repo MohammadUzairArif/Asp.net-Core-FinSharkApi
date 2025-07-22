@@ -1,5 +1,6 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Data;
 using Asp.netCore_FinSharkProjAPI.Dtos.Stock;
+using Asp.netCore_FinSharkProjAPI.Helpers;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
 using Asp.netCore_FinSharkProjAPI.Models;
@@ -15,9 +16,32 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
         {
             this.context = context;
         }
-        public async Task<List<Stock>> GetAllStocksAsync()
+        public async Task<List<Stock>> GetAllStocksAsync(QueryObject query)
         {
-            return await context.Stocks.Include(c=> c.Comments).ToListAsync();
+            var stocks = context.Stocks.Include(c=> c.Comments).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(query.Symbol))
+            {
+                stocks = stocks.Where(s => s.Symbol.Contains(query.Symbol));
+            }
+            if (!string.IsNullOrWhiteSpace(query.CompanyName))
+            {
+                stocks = stocks.Where(s => s.CompanyName.Contains(query.CompanyName));
+            }
+            if (!string.IsNullOrWhiteSpace(query.SortBy))
+            {
+                if (query.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))  //→ "SYMBOL", "symbol", "SyMbOl" sab valid hain. (case-insensitive check)
+
+                {
+                    stocks = query.IsDescending ? 
+                             stocks.OrderByDescending(s => s.Symbol) : 
+                             stocks.OrderBy(s => s.Symbol);
+                }
+            }
+            // Add pagination
+            var skipNumber = (query.PageNumber - 1) * query.PageSize;
+
+            return await stocks.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
         public async Task<Stock?> GetStockByIdAsync(int id)
