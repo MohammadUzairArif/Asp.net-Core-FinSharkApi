@@ -22,7 +22,11 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll() { 
+        public async Task<IActionResult> GetAll() {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var stocks = await stockRepo.GetAllStocksAsync();
             var stockDtos = stocks.Select(s => s.ToStockDto());
             if (stocks == null)
@@ -32,8 +36,12 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return Ok(stockDtos);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id) { 
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetById(int id) {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var stock =await stockRepo.GetStockByIdAsync(id);
             if (stock == null)
             {
@@ -45,6 +53,10 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateStockRequestDto stockDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             if (stockDto == null)
             {
                 return BadRequest("Invalid stock data.");
@@ -54,9 +66,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = stock.Id }, stock.ToStockDto()); // Return the created stock as a DTO
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateStockRequestDto updateDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var stockModel = await stockRepo.UpdateAsync(id, updateDto);
             if (stockModel is null)
                 return NotFound($"Stock with ID {id} not found.");
@@ -67,9 +83,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return Ok(stockModel.ToStockDto());   // 🔁 Return updated DTO
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var stockModel =await stockRepo.DeleteAsync(id);
             if (stockModel is null)
                 return NotFound($"Stock with ID {id} not found.");

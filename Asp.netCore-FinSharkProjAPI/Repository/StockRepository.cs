@@ -43,11 +43,12 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
             // Update the existing stock with the new values from the DTO
 
 
-           existingStock.UpdateFromDto(stockDto);
+            existingStock.UpdateFromDto(stockDto);
 
             await context.SaveChangesAsync();
             return existingStock;
         }
+
 
         public async Task<Stock?> DeleteAsync(int id)
         {

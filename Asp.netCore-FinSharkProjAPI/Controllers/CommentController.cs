@@ -23,6 +23,11 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            // data validation
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var comments = await commentRepo.GetAllCommentsAsync();
             var commentDtos = comments.Select(c => c.ToCommentDto()); // Convert to DTOs
             if (comments == null)
@@ -32,9 +37,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return Ok(commentDtos);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var comment = await commentRepo.GetCommentByIdAsync(id);
             if (comment == null)
             {
@@ -43,9 +52,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return Ok(comment.ToCommentDto()); // Convert to DTO
         }
 
-        [HttpPost("{stockId}")]
+        [HttpPost("{stockId:int}")]
         public async Task<IActionResult> CreateComment([FromRoute] int stockId,[FromBody] CreateCommentDto commentDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             if (!await stockRepo.StockExists(stockId))
             {
                 return BadRequest("Stock doesnot exists");
@@ -57,9 +70,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return CreatedAtAction(nameof(GetById), new { id = commentModel.Id }, commentModel.ToCommentDto());
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateComment(int id, [FromBody] UpdateCommentRequestDto updateDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var comment = await commentRepo.UpdateAsync(id,updateDto.ToCommentFromUpdateDto());
 
             if (comment == null)
@@ -68,9 +85,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             }
              return Ok(comment.ToCommentDto()); // Convert to DTO
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteComment(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var comment = await commentRepo.DeleteAsync(id);
             if (comment == null)
             {
