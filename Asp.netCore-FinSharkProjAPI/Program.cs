@@ -1,5 +1,6 @@
 using Asp.netCore_FinSharkProjAPI.Data;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
+using Asp.netCore_FinSharkProjAPI.Models;
 using Asp.netCore_FinSharkProjAPI.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -31,7 +32,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(items =>
 
 // Configure Identity 
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>     //ye sub hum conditions derhy ha ke hamre password ki requirments kia hongi
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>     //ye sub hum conditions derhy ha ke hamre password ki requirments kia hongi
 {
     options.Password.RequireDigit = true;  // Password ma digit hona chahiye
     options.Password.RequireLowercase = true;  // Password ma lowercase letter hona chahiye
@@ -39,7 +40,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>     //ye sub
     options.Password.RequiredLength = 8;  // Password ki minimum length 12 honi chahiye
     options.Password.RequireNonAlphanumeric = true;  // Password ma non-alphanumeric character hona chahiye
 
-}).AddEntityFrameworkStores<ApplicationDbContext>();  // IdentityUser aur IdentityRole ko ApplicationDbContext ke sath use karna hai
+}).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();  // IdentityUser aur IdentityRole ko ApplicationDbContext ke sath use karna hai
 
 
 // Authentication jwt token
@@ -74,8 +75,6 @@ builder.Services.AddAuthentication(options =>
             System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SigningKey"])
             ),
 
-
-
     };
 }
 );
@@ -94,6 +93,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+app.UseCors("AllowAll");
 app.UseAuthentication(); // Authentication middleware ko use karna hai, taake JWT token ko verify kiya ja sake.
 app.UseAuthorization(); // Authorization middleware ko use karna hai, taake user ki permissions check ki ja sake.
 

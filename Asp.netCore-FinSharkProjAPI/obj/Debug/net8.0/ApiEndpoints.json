@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/Account/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDto",
+        "Type": "Asp.netCore_FinSharkProjAPI.Dtos.Account.RegsiterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.CommentController",
     "Method": "GetAll",
     "RelativePath": "api/Comment",
