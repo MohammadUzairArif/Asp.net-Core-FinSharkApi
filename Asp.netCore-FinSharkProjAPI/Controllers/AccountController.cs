@@ -1,4 +1,5 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Dtos.Account;
+using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -11,10 +12,12 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
     public class AccountController : ControllerBase
     {
         private readonly UserManager<AppUser> userManager;
+        private readonly ITokenService tokenService;
 
-        public AccountController(UserManager<AppUser> userManager)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
         {
             this.userManager = userManager;
+            this.tokenService = tokenService;
         }
 
         [HttpPost("register")]
@@ -37,7 +40,7 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
                     var roleResult = await userManager.AddToRoleAsync(appUser, "User");
                     if (roleResult.Succeeded)
                     {
-                        return Ok("User created Successfully!");
+                        return Ok(new NewUserDto { Username = appUser.UserName , Email = appUser.Email, Token = tokenService.CreateToken(appUser)});
                     }
                     else
                     {

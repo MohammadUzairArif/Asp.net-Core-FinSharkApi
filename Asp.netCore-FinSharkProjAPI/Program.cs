@@ -2,6 +2,7 @@ using Asp.netCore_FinSharkProjAPI.Data;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Models;
 using Asp.netCore_FinSharkProjAPI.Repository;
+using Asp.netCore_FinSharkProjAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -82,6 +83,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<ITokenService, ServiceToken>(); // Token service ko dependency injection ke zariye add karna hai
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
