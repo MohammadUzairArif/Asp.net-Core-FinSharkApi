@@ -4,6 +4,7 @@ using Asp.netCore_FinSharkProjAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Asp.netCore_FinSharkProjAPI.Controllers
 {
@@ -13,11 +14,34 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
     {
         private readonly UserManager<AppUser> userManager;
         private readonly ITokenService tokenService;
+        private readonly SignInManager<AppUser> signInManager;
 
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, SignInManager<AppUser> signInManager)
         {
             this.userManager = userManager;
             this.tokenService = tokenService;
+            this.signInManager = signInManager;
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+                var user = await userManager.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.UserName.ToLower());
+                if (user == null)
+                    return Unauthorized("Invalid username or password");
+                var result = await signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+                if (!result.Succeeded)
+                    return Unauthorized("Invalid username or password");
+                return Ok(new NewUserDto { Username = user.UserName, Email = user.Email, Token = tokenService.CreateToken(user) });
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e);
+            }
         }
 
         [HttpPost("register")]

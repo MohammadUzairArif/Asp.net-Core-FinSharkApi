@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Account/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "Asp.netCore_FinSharkProjAPI.Dtos.Account.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.AccountController",
     "Method": "Register",
     "RelativePath": "api/Account/register",
     "HttpMethod": "POST",

@@ -14,6 +14,7 @@ namespace Asp.netCore_FinSharkProjAPI.Data
         }
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
 
 
 
@@ -31,6 +32,25 @@ namespace Asp.netCore_FinSharkProjAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            
+
+            modelBuilder.Entity<Portfolio>(x => x.HasKey(p => new
+            {
+                p.AppUserId, // Portfolio table ka AppUserId ko primary key set karna
+                p.StockId   // Portfolio table ka StockId ko primary key set karna
+            })); 
+
+            modelBuilder.Entity<Portfolio>()
+                .HasOne(p => p.AppUser) // Portfolio ka AppUser ke saath one-to-many relationship
+                .WithMany(u => u.Portfolios) // Ek AppUser ke paas multiple Portfolios ho sakte hain
+                .HasForeignKey(p => p.AppUserId); // Foreign key set karna
+
+            modelBuilder.Entity<Portfolio>()
+                .HasOne(p => p.Stock) // Portfolio ka Stock ke saath one-to-many relationship
+                .WithMany(s => s.Portfolios) // Ek Stock ke paas multiple Portfolios ho sakte hain
+                .HasForeignKey(p => p.StockId); // Foreign key set karna
+
 
             // Seed initial data for roles
             /* Yahan aap 2 roles bana rahe ho:

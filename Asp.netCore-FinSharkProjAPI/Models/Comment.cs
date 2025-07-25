@@ -1,5 +1,8 @@
-﻿namespace Asp.netCore_FinSharkProjAPI.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Asp.netCore_FinSharkProjAPI.Models
 {
+    [Table("Comments")]
     public class Comment
     {
         public int Id { get; set; }

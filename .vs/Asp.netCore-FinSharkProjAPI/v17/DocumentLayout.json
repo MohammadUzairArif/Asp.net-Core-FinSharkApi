@@ -3,16 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Migrations\\20250725202530_PortfolioManyToMany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Asp.netCore-FinSharkProjAPI\\Migrations\\20250725202530_PortfolioManyToMany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\models\\portfolio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\models\\portfolio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\models\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\models\\stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\dtos\\account\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\dtos\\account\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\services\\servicetoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\services\\servicetoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\interfaces\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\dtos\\account\\newuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\dtos\\account\\regsiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\dtos\\account\\regsiterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|c:\\users\\pmls\\desktop\\asp.net\\asp.netcore-finsharkprojapi\\asp.netcore-finsharkprojapi\\migrations\\20250723202605_seedrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40C7F7AF-3FFC-4380-997F-DC12795A2BB2}|Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj|solutionrelative:asp.netcore-finsharkprojapi\\migrations\\20250723202605_seedrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,20 +74,69 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NewUserDto.cs",
-              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
-              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
-              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
-              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20250725202530_PortfolioManyToMany.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Migrations\\20250725202530_PortfolioManyToMany.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Migrations\\20250725202530_PortfolioManyToMany.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Migrations\\20250725202530_PortfolioManyToMany.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Migrations\\20250725202530_PortfolioManyToMany.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T19:59:21.875Z",
+              "WhenOpened": "2025-07-25T20:25:30.695Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\Comment.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T19:53:49.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Stock.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\Stock.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Models\\Stock.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\Stock.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Models\\Stock.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T19:52:11.745Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\AppUser.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T19:51:42.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Portfolio.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\Portfolio.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Models\\Portfolio.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Models\\Portfolio.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Models\\Portfolio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T19:47:19.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\appsettings.json",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\appsettings.json",
@@ -79,20 +148,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "ServiceToken.cs",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Services\\ServiceToken.cs",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Services\\ServiceToken.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Services\\ServiceToken.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Services\\ServiceToken.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC4AAACJAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwC4AAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T19:37:18.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T19:37:18.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "ITokenService.cs",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Interfaces\\ITokenService.cs",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Interfaces\\ITokenService.cs",
@@ -100,12 +168,11 @@
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Interfaces\\ITokenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T19:35:41.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T19:35:41.177Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Program.cs",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Program.cs",
@@ -117,19 +184,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAcwD0AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwCMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T19:24:15.501Z"
+              "WhenOpened": "2025-07-23T19:24:15.501Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\LoginDto.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\LoginDto.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T19:10:08.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "RegsiterDto.cs",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\RegsiterDto.cs",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\RegsiterDto.cs",
@@ -141,28 +221,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAADwvyoAAAB7AAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwCQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T19:10:10.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T19:10:10.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20250723202605_seedRole.cs",
-              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Migrations\\20250723202605_seedRole.cs",
-              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Migrations\\20250723202605_seedRole.cs",
-              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Migrations\\20250723202605_seedRole.cs",
-              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Migrations\\20250723202605_seedRole.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "NewUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
+              "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
+              "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
+              "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Dtos\\Account\\NewUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T20:26:06.127Z"
+              "WhenOpened": "2025-07-24T19:59:21.875Z"
             }
           ]
         }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.netCore_FinSharkProjAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250723163414_InitIdentity")]
-    partial class InitIdentity
+    [Migration("20250725202530_PortfolioManyToMany")]
+    partial class PortfolioManyToMany
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,6 +119,21 @@ namespace Asp.netCore_FinSharkProjAPI.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("Asp.netCore_FinSharkProjAPI.Models.Portfolio", b =>
+                {
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("StockId")
+                        .HasColumnType("int");
+
+                    b.HasKey("AppUserId", "StockId");
+
+                    b.HasIndex("StockId");
+
+                    b.ToTable("Portfolio");
+                });
+
             modelBuilder.Entity("Asp.netCore_FinSharkProjAPI.Models.Stock", b =>
                 {
                     b.Property<int>("Id")
@@ -178,6 +193,20 @@ namespace Asp.netCore_FinSharkProjAPI.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "14b60e72-e54c-41b0-aa84-1245c2402e78",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "83cea520-27c2-483a-9bed-88c2b970e2d4",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -295,6 +324,25 @@ namespace Asp.netCore_FinSharkProjAPI.Migrations
                     b.Navigation("Stock");
                 });
 
+            modelBuilder.Entity("Asp.netCore_FinSharkProjAPI.Models.Portfolio", b =>
+                {
+                    b.HasOne("Asp.netCore_FinSharkProjAPI.Models.AppUser", "AppUser")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Asp.netCore_FinSharkProjAPI.Models.Stock", "Stock")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("StockId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Stock");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -346,9 +394,16 @@ namespace Asp.netCore_FinSharkProjAPI.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Asp.netCore_FinSharkProjAPI.Models.AppUser", b =>
+                {
+                    b.Navigation("Portfolios");
+                });
+
             modelBuilder.Entity("Asp.netCore_FinSharkProjAPI.Models.Stock", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Portfolios");
                 });
 #pragma warning restore 612, 618
         }

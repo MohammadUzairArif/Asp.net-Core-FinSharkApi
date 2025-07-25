@@ -2,6 +2,7 @@
 
 namespace Asp.netCore_FinSharkProjAPI.Models
 {
+    [Table("Stocks")]
     public class Stock
     {
         public int Id { get; set; }
@@ -16,5 +17,6 @@ namespace Asp.netCore_FinSharkProjAPI.Models
 
         //Navigation property - one to many relationship(One stock can have many comments)
         public List<Comment> Comments { get; set; } = new List<Comment>();
+        public List<Portfolio> Portfolios { get; set; } = new List<Portfolio>();
     }
 }
