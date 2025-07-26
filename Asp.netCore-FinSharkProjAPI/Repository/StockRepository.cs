@@ -90,5 +90,10 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
         {
             return context.Stocks.AnyAsync(s => s.Id == id);
         }
+
+        public async Task<Stock?> GetBySymbolAsync(string symbol)
+        {
+            return await context.Stocks.FirstOrDefaultAsync(s => s.Symbol == symbol);
+        }
     }
 }

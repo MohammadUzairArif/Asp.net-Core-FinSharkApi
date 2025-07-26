@@ -3,8 +3,10 @@ using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace Asp.netCore_FinSharkProjAPI.Controllers
 {
@@ -44,6 +46,48 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
 
             var userPortfolio = await portfolioRepo.GetUserPortfolio(appUser);
             return Ok(userPortfolio);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> AddPortfolio(string symbol)
+        {
+            var username = User.GetUsername();
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return BadRequest("Username claim is missing or invalid.");
+            }
+
+            var appUser = await userManager.FindByNameAsync(username);
+            if (appUser == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            var stock = await stockRepo.GetBySymbolAsync(symbol);
+
+            if (stock == null)
+            {
+                return BadRequest("Stock not found");
+            }
+
+            var userPortfolio = await portfolioRepo.GetUserPortfolio(appUser);
+            if (userPortfolio.Any(e => e.Symbol.ToLower() == symbol.ToLower()))
+            {
+                return BadRequest("Stock already exists in the portfolio.");
+            }
+
+            var portfolioModel = new Portfolio
+            {
+                StockId = stock.Id,
+                AppUserId = appUser.Id,
+            };
+            await portfolioRepo.CreateAsync(portfolioModel);
+            if (portfolioModel == null)
+            {
+                return BadRequest("Failed to add stock to portfolio.");
+            }
+            return Ok(new { Message = "Stock added to portfolio successfully." });
         }
     }
 }

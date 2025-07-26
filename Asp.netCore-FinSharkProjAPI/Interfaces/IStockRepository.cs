@@ -8,6 +8,7 @@ namespace Asp.netCore_FinSharkProjAPI.Interfaces
     {
         Task<List<Stock>> GetAllStocksAsync(QueryObject query);
         Task<Stock?> GetStockByIdAsync(int id); // firstordefault can be null
+        Task<Stock?> GetBySymbolAsync(string symbol);
         Task<Stock> CreateAsync(Stock stockModel);
         Task<Stock?> UpdateAsync(int id, UpdateStockRequestDto stockDto);
         Task<Stock?> DeleteAsync(int id);
