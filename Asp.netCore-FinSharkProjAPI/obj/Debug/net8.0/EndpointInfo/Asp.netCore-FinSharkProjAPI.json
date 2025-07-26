@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Asp.netCore-FinSharkProjAPI",
-    "version": "1.0"
+    "title": "Demo API",
+    "version": "v1"
   },
   "paths": {
     "/api/Account/login": {
@@ -225,6 +225,18 @@
         }
       }
     },
+    "/api/Portfolio": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Stock": {
       "get": {
         "tags": [
@@ -409,6 +421,76 @@
   },
   "components": {
     "schemas": {
+      "AppUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedUserName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "normalizedEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "securityStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "concurrencyStamp": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumberConfirmed": {
+            "type": "boolean"
+          },
+          "twoFactorEnabled": {
+            "type": "boolean"
+          },
+          "lockoutEnd": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lockoutEnabled": {
+            "type": "boolean"
+          },
+          "accessFailedCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "portfolios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Portfolio"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Comment": {
         "type": "object",
         "properties": {
@@ -532,6 +614,26 @@
         },
         "additionalProperties": false
       },
+      "Portfolio": {
+        "type": "object",
+        "properties": {
+          "appUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "stockId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "appUser": {
+            "$ref": "#/components/schemas/AppUser"
+          },
+          "stock": {
+            "$ref": "#/components/schemas/Stock"
+          }
+        },
+        "additionalProperties": false
+      },
       "RegsiterDto": {
         "required": [
           "email",
@@ -591,6 +693,13 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Comment"
+            },
+            "nullable": true
+          },
+          "portfolios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Portfolio"
             },
             "nullable": true
           }
@@ -664,6 +773,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Please enter a valid token",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }
