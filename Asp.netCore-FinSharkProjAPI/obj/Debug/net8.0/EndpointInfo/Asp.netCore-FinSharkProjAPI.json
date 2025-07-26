@@ -555,6 +555,13 @@
           },
           "stock": {
             "$ref": "#/components/schemas/Stock"
+          },
+          "appUserId": {
+            "type": "string",
+            "nullable": true
+          },
+          "appUser": {
+            "$ref": "#/components/schemas/AppUser"
           }
         },
         "additionalProperties": false

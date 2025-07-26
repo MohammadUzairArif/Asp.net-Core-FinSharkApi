@@ -15,5 +15,10 @@ namespace Asp.netCore_FinSharkProjAPI.Models
 
         // Navigation property
         public Stock? Stock { get; set; }
+
+        //one to one relationship
+         public string AppUserId { get; set; } 
+
+        public AppUser AppUser { get; set; }
     }
 }

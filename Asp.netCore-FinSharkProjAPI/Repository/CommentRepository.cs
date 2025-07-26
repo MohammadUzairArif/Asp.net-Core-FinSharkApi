@@ -17,12 +17,12 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
 
         public async Task<List<Comment>> GetAllCommentsAsync()
         {
-            return await context.Comments.ToListAsync();
+            return await context.Comments.Include(a => a.AppUser).ToListAsync();
         }
 
         public async Task<Comment?> GetCommentByIdAsync(int id)
         {
-            return await context.Comments.FindAsync(id);
+            return await context.Comments.Include(a => a.AppUser).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Comment> CreateAsync(Comment commentModel)

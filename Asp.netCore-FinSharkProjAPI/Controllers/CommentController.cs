@@ -1,7 +1,10 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Dtos.Comment;
+using Asp.netCore_FinSharkProjAPI.Extentions;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
+using Asp.netCore_FinSharkProjAPI.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 
@@ -13,11 +16,13 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
     {
         private readonly ICommentRepository commentRepo;
         private readonly IStockRepository stockRepo;
+        private readonly UserManager<AppUser> userManager;
 
-        public CommentController(ICommentRepository commentRepo, IStockRepository stockRepo)
+        public CommentController(ICommentRepository commentRepo, IStockRepository stockRepo, UserManager<AppUser> userManager)
         {
             this.commentRepo = commentRepo;
             this.stockRepo = stockRepo;
+            this.userManager = userManager;
         }
 
         [HttpGet]
@@ -63,12 +68,21 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             {
                 return BadRequest("Stock doesnot exists");
             }
+
+            var userName = User.GetUsername();
+            var appUser = await userManager.FindByNameAsync(userName);
+
+
             var commentModel = commentDto.ToCommentFromCreate(stockId); // Convert DTO to Model
-            // Here you would typically save the comment to the database
-             await commentRepo.CreateAsync(commentModel); // Save the comment using the repository
+            commentModel.AppUserId = appUser.Id; // Set the AppUserId from the authenticated user
+
+               // Here you would typically save the comment to the database
+            await commentRepo.CreateAsync(commentModel); // Save the comment using the repository
             // For now, we will just return the created comment
             return CreatedAtAction(nameof(GetById), new { id = commentModel.Id }, commentModel.ToCommentDto());
         }
+
+
 
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateComment(int id, [FromBody] UpdateCommentRequestDto updateDto)

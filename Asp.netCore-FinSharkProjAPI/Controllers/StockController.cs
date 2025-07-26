@@ -29,7 +29,7 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
                 return BadRequest(ModelState);
             }
             var stocks = await stockRepo.GetAllStocksAsync(query);
-            var stockDtos = stocks.Select(s => s.ToStockDto());
+            var stockDtos = stocks.Select(s => s.ToStockDto()).ToList();
             if (stocks == null)
             {
                 return NotFound("No stocks found.");
