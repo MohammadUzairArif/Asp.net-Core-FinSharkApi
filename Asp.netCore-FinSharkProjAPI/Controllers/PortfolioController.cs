@@ -89,5 +89,35 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             }
             return Ok(new { Message = "Stock added to portfolio successfully." });
         }
+
+
+        [HttpDelete]
+        [Authorize]
+
+        public async Task<IActionResult> DeletePortfolio(string symbol)
+        {
+            var username = User.GetUsername();
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                return BadRequest("Username claim is missing or invalid.");
+            }
+            var appUser = await userManager.FindByNameAsync(username);
+            if (appUser == null)
+            {
+                return NotFound("User not found.");
+            }
+            var userPortfolio = await portfolioRepo.GetUserPortfolio(appUser);
+            var filteredStock = userPortfolio.Where(e => e.Symbol.ToLower() == symbol.ToLower()).ToList();
+
+            if (filteredStock.Count() == 1)
+            {
+                await portfolioRepo.DeletePortfolio(appUser, symbol);
+            }
+            else
+            {
+                return BadRequest("Stock not found in portfolio.");
+            }
+            return Ok(new { Message = "Stock removed from portfolio successfully." });
+        }
     }
 }

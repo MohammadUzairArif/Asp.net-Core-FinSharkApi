@@ -142,6 +142,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.PortfolioController",
+    "Method": "DeletePortfolio",
+    "RelativePath": "api/Portfolio",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "symbol",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.StockController",
     "Method": "GetAll",
     "RelativePath": "api/Stock",

@@ -106,8 +106,7 @@
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Repository\\StockRepository.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T12:48:23.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T12:48:23.778Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Interfaces\\IStockRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T12:47:49.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T12:47:49.544Z"
             },
             {
               "$type": "Document",
@@ -130,10 +128,9 @@
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Interfaces\\IPortfolioRepository.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Interfaces\\IPortfolioRepository.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Interfaces\\IPortfolioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T11:20:51.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T11:20:51.18Z"
             },
             {
               "$type": "Document",
@@ -143,7 +140,7 @@
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Controllers\\PortfolioController.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Controllers\\PortfolioController.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Controllers\\PortfolioController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAcwFkAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAcwHYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T11:06:16.937Z",
               "EditorCaption": ""
@@ -180,10 +177,9 @@
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Repository\\PortfolioRepository.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Repository\\PortfolioRepository.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Repository\\PortfolioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-26T11:22:54.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-26T11:22:54.482Z"
             },
             {
               "$type": "Document",
