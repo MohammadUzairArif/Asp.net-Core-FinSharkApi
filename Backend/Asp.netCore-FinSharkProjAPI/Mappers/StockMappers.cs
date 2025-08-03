@@ -58,6 +58,20 @@ namespace Asp.netCore_FinSharkProjAPI.Mappers
             };
         }
 
+        public static Stock ToStockFromFMP(this FMPStock fMPStock)
+        {
+            return new Stock
+            {
+                Symbol = fMPStock.symbol,
+                CompanyName = fMPStock.companyName,
+                Purchase = (decimal)fMPStock.price,
+                LastDiv = (decimal)fMPStock.lastDiv,
+                Industry = fMPStock.industry,
+                MarketCap = fMPStock.mktCap,
+
+            };
+        }
+
         public static void UpdateFromDto(this Stock stockModel, UpdateStockRequestDto dto)
         {
             stockModel.Symbol = dto.Symbol;

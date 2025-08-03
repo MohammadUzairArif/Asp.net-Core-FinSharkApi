@@ -178,19 +178,19 @@
         }
       }
     },
-    "/api/Comment/{stockId}": {
+    "/api/Comment/{symbol}": {
       "post": {
         "tags": [
           "Comment"
         ],
         "parameters": [
           {
-            "name": "stockId",
+            "name": "symbol",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "pattern": "^[A-Za-z]*$",
+              "type": "string"
             }
           }
         ],

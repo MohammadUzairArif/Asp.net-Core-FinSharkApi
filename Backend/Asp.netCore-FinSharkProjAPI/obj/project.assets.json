@@ -4575,11 +4575,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj",
+      "projectUniqueName": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Backend\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj",
       "projectName": "Asp.netCore-FinSharkProjAPI",
-      "projectPath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj",
+      "projectPath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Backend\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj",
       "packagesPath": "C:\\Users\\PMLS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\obj\\",
+      "outputPath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Backend\\Asp.netCore-FinSharkProjAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

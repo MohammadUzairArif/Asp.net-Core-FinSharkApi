@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JGG+BzM42TQ=",
+  "dgSpecHash": "/E/ULRD1o1A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj",
+  "projectFilePath": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Backend\\Asp.netCore-FinSharkProjAPI\\Asp.netCore-FinSharkProjAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PMLS\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\PMLS\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

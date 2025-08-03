@@ -114,6 +114,8 @@ builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<ITokenService, ServiceToken>(); // Token service ko dependency injection ke zariye add karna hai
 builder.Services.AddScoped<IPortfolioRepository, PortfolioRepository>(); // Portfolio repository ko dependency injection ke zariye add karna hai
+builder.Services.AddScoped<IFMPService, FMPSevice>();
+builder.Services.AddHttpClient<IFMPService,FMPSevice>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

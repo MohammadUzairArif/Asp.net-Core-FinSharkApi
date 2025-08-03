@@ -97,14 +97,14 @@
   {
     "ContainingType": "Asp.netCore_FinSharkProjAPI.Controllers.CommentController",
     "Method": "CreateComment",
-    "RelativePath": "api/Comment/{stockId}",
+    "RelativePath": "api/Comment/{symbol}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "stockId",
-        "Type": "System.Int32",
+        "Name": "symbol",
+        "Type": "System.String",
         "IsRequired": true
       },
       {

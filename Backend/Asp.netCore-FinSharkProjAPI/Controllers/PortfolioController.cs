@@ -1,6 +1,7 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Extentions;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Models;
+using Asp.netCore_FinSharkProjAPI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -17,12 +18,14 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         private readonly UserManager<AppUser> userManager;
         private readonly IStockRepository stockRepo;
         private readonly IPortfolioRepository portfolioRepo;
+        private readonly IFMPService fMPService;
 
-        public PortfolioController(UserManager<AppUser> userManager, IStockRepository stockRepo, IPortfolioRepository portfolioRepo)
+        public PortfolioController(UserManager<AppUser> userManager, IStockRepository stockRepo, IPortfolioRepository portfolioRepo,IFMPService fMPService)
         {
             this.userManager = userManager;
             this.stockRepo = stockRepo;
             this.portfolioRepo = portfolioRepo;
+            this.fMPService = fMPService;
         }
 
         [Authorize]
@@ -53,18 +56,23 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         public async Task<IActionResult> AddPortfolio(string symbol)
         {
             var username = User.GetUsername();
-            if (string.IsNullOrWhiteSpace(username))
-            {
-                return BadRequest("Username claim is missing or invalid.");
-            }
-
+            
             var appUser = await userManager.FindByNameAsync(username);
-            if (appUser == null)
-            {
-                return NotFound("User not found.");
-            }
+           
 
             var stock = await stockRepo.GetBySymbolAsync(symbol);
+            if (stock == null)
+            {
+                stock = await fMPService.FindStockBySymbolAsync(symbol);
+                if (stock == null)
+                {
+                    return BadRequest("Stock doesnot exists");
+                }
+                else
+                {
+                    await stockRepo.CreateAsync(stock);
+                }
+            }
 
             if (stock == null)
             {

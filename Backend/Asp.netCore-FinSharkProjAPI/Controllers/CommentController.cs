@@ -17,12 +17,14 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         private readonly ICommentRepository commentRepo;
         private readonly IStockRepository stockRepo;
         private readonly UserManager<AppUser> userManager;
+        private readonly IFMPService fMPService;
 
-        public CommentController(ICommentRepository commentRepo, IStockRepository stockRepo, UserManager<AppUser> userManager)
+        public CommentController(ICommentRepository commentRepo, IStockRepository stockRepo, UserManager<AppUser> userManager, IFMPService fMPService)
         {
             this.commentRepo = commentRepo;
             this.stockRepo = stockRepo;
             this.userManager = userManager;
+            this.fMPService = fMPService;
         }
 
         [HttpGet]
@@ -57,23 +59,31 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
             return Ok(comment.ToCommentDto()); // Convert to DTO
         }
 
-        [HttpPost("{stockId:int}")]
-        public async Task<IActionResult> CreateComment([FromRoute] int stockId,[FromBody] CreateCommentDto commentDto)
+        [HttpPost("{symbol:alpha}")]
+        public async Task<IActionResult> CreateComment([FromRoute] string symbol,[FromBody] CreateCommentDto commentDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            if (!await stockRepo.StockExists(stockId))
+           var stock = await stockRepo.GetBySymbolAsync(symbol);
+            if (stock == null)
             {
-                return BadRequest("Stock doesnot exists");
+                stock = await fMPService.FindStockBySymbolAsync(symbol);
+                if (stock == null)
+                {
+                    return BadRequest("Stock doesnot exists");
+                }
+                else
+                {
+                    await stockRepo.CreateAsync(stock);   
+                }
             }
-
-            var userName = User.GetUsername();
+                    var userName = User.GetUsername();
             var appUser = await userManager.FindByNameAsync(userName);
 
 
-            var commentModel = commentDto.ToCommentFromCreate(stockId); // Convert DTO to Model
+            var commentModel = commentDto.ToCommentFromCreate(stock.Id); // Convert DTO to Model
             commentModel.AppUserId = appUser.Id; // Set the AppUserId from the authenticated user
 
                // Here you would typically save the comment to the database
