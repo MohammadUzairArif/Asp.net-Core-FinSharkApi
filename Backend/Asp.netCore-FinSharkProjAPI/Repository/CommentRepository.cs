@@ -1,4 +1,5 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Data;
+using Asp.netCore_FinSharkProjAPI.Helpers;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
 using Asp.netCore_FinSharkProjAPI.Models;
@@ -15,9 +16,19 @@ namespace Asp.netCore_FinSharkProjAPI.Repository
             this.context = context;
         }
 
-        public async Task<List<Comment>> GetAllCommentsAsync()
+        public async Task<List<Comment>> GetAllCommentsAsync(CommentQueryObject queryObject)
         {
-            return await context.Comments.Include(a => a.AppUser).ToListAsync();
+            var comments = context.Comments.Include(a => a.AppUser).AsQueryable();
+            if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
+            {
+                comments = comments.Where(s=> s.Stock.Symbol == queryObject.Symbol);
+
+            }
+            if (queryObject.IsDescending == true)
+            {
+                comments = comments.OrderByDescending(c => c.CreatedOn);
+            }
+            return await comments.ToListAsync();
         }
 
         public async Task<Comment?> GetCommentByIdAsync(int id)

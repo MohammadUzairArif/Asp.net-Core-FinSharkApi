@@ -1,10 +1,11 @@
-﻿using Asp.netCore_FinSharkProjAPI.Models;
+﻿using Asp.netCore_FinSharkProjAPI.Helpers;
+using Asp.netCore_FinSharkProjAPI.Models;
 
 namespace Asp.netCore_FinSharkProjAPI.Interfaces
 {
     public interface ICommentRepository
     {
-        Task<List<Comment>> GetAllCommentsAsync();
+        Task<List<Comment>> GetAllCommentsAsync(CommentQueryObject queryObject);
         Task<Comment?> GetCommentByIdAsync(int id);
 
         Task<Comment> CreateAsync(Comment commentModel);

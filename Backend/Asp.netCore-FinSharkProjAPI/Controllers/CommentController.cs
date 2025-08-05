@@ -1,8 +1,10 @@
 ﻿using Asp.netCore_FinSharkProjAPI.Dtos.Comment;
 using Asp.netCore_FinSharkProjAPI.Extentions;
+using Asp.netCore_FinSharkProjAPI.Helpers;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
 using Asp.netCore_FinSharkProjAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -28,14 +30,15 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [Authorize]
+        public async Task<IActionResult> GetAll([FromQuery]CommentQueryObject queryObject)
         {
             // data validation
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var comments = await commentRepo.GetAllCommentsAsync();
+            var comments = await commentRepo.GetAllCommentsAsync(queryObject);
             var commentDtos = comments.Select(c => c.ToCommentDto()); // Convert to DTOs
             if (comments == null)
             {
