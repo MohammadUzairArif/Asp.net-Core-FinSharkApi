@@ -1,14 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Card from './components/cards/Card';
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Card/>
-    </div>
-  );
+    <div>App</div>
+  )
 }
 
-export default App;
+export default App

@@ -3,6 +3,7 @@ using Asp.netCore_FinSharkProjAPI.Dtos.Stock;
 using Asp.netCore_FinSharkProjAPI.Helpers;
 using Asp.netCore_FinSharkProjAPI.Interfaces;
 using Asp.netCore_FinSharkProjAPI.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace Asp.netCore_FinSharkProjAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAll([FromQuery] QueryObject query) {
             if (!ModelState.IsValid)
             {
