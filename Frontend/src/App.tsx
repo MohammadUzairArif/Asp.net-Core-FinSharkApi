@@ -5,18 +5,27 @@ import CardList from './components/Cardlist/CardList';
 import Search from './components/Search/Search';
 import type { CompanySearch } from './company';
 import { searchCompanies } from './api';
+import ListPortfolio from './components/portfolio/ListPortfolio/ListPortfolio';
 
 const App = () => {
     const [search, setSearch] = useState<string>("");
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
+  const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
    
   };
 
-   const onClick = async (e: SyntheticEvent) => {
+    const onPortfolioCreate = (e: any) => {
+    e.preventDefault();
+    console.log(e);
+    //Arrays are tricky to update. Please wait till next video.
+  };
+
+  const onSearchSubmit = async (e: SyntheticEvent) => {
+    e.preventDefault();
     const result = await searchCompanies(search);
     //setServerError(result.data);
     if (typeof result === "string") {
@@ -30,8 +39,16 @@ const App = () => {
 
   return (
     <div className="app">
-      <Search onClick={onClick} search={search} handleChange={handleChange}/>
-      <CardList searchResults={searchResult} />
+     <Search
+        onSearchSubmit={onSearchSubmit}
+        search={search}
+        handleSearchChange={handleSearchChange}
+      />
+      <ListPortfolio />
+      <CardList
+        searchResults={searchResult}
+        onPortfolioCreate={onPortfolioCreate}
+      />
         {serverError && <div>Unable to connect to API</div>}
       {/* {serverError ? <div>Connected</div> : <div>Unable to connect to api</div>} */}
     </div>
