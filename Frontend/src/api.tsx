@@ -9,7 +9,7 @@ import type  {
   CompanySearch,
   CompanyTenK,
   CompanyHistoricalDividend,
-  Dividend,
+  
 } from "./company";
 
 
