@@ -1,14 +1,20 @@
 import React from "react";
+import CardPortfolio from "../CardPortfolio/CardPortfolio";
 
-type Props = {};
-
-const ListPortfolio = (props: Props) => {
+interface Props {
+  portfolioValues: string[];
+}
+const ListPortfolio = ({ portfolioValues }: Props) => {
   return (
-    <ul>
-      <li>MSFT</li>
-      <li>AAPL</li>
-      <li>TSLA</li>
-    </ul>
+    <>
+      <h3>My Portfolio</h3>
+      <ul>
+        {portfolioValues &&
+          portfolioValues.map((portfolioValue) => {
+            return <CardPortfolio portfolioValue={portfolioValue} />;
+          })}
+      </ul>
+    </>
   );
 };
 
