@@ -6,6 +6,8 @@ import Search from './components/Search/Search';
 import type { CompanySearch } from './company';
 import { searchCompanies } from './api';
 import ListPortfolio from './components/portfolio/ListPortfolio/ListPortfolio';
+import Navbar from './components/Navbar/Navbar';
+
 
 const App = () => {
     const [search, setSearch] = useState<string>("");
@@ -51,7 +53,9 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+     <>
+      <Navbar />
+      
      <Search
         onSearchSubmit={onSearchSubmit}
         search={search}
@@ -64,7 +68,7 @@ const App = () => {
       />
         {serverError && <div>Unable to connect to API</div>}
       {/* {serverError ? <div>Connected</div> : <div>Unable to connect to api</div>} */}
-    </div>
+    </>
   )
 }
 
