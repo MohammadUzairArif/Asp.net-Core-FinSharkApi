@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getCompData } from "../../api";
 import type { CompanyCompData } from "../../company";
+import { getCompData } from "../../api";
 import CompFinderItem from "./CompFinderItem/CompFinderItem";
+import Spinner from "../Spinner/Spinner";
 type Props = {
   ticker: string;
 };
@@ -17,9 +18,13 @@ const CompFinder = ({ ticker }: Props) => {
   }, [ticker]);
   return (
     <div className="inline-flex rounded-md shadow-sm m-4" role="group">
-      {companyData?.peersList.map((ticker) => {
-        return <CompFinderItem ticker={ticker} />;
-      })}
+       {companyData ? (
+        companyData?.peersList.map((ticker) => {
+          return <CompFinderItem ticker={ticker} />;
+        })
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };
