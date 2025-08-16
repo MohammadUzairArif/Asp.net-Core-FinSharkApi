@@ -92,7 +92,7 @@ export const getCashFlowStatement = async (query: string) => {
 export const getCompData = async (query: string) => {
   try {
     const data = await axios.get<CompanyCompData[]>(
-      `https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=${import.meta.env.VITE_API_KEY}`
+      `https://financialmodelingprep.com/api/v3/stock_peers?symbol=${query}&apikey=${import.meta.env.VITE_API_KEY}`
     );
     return data;
   } catch (error: any) {

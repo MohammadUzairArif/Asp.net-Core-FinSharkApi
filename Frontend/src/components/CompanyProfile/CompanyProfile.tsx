@@ -28,6 +28,11 @@ const tableConfig = [
     render: (company: CompanyKeyMetrics) => company.returnOnTangibleAssetsTTM,
     subTitle:
       "Return on assets is the measure of how effective a company is using its assets",
+  },{
+    label: "Free Cashflow Per Share",
+    render: (company: CompanyKeyMetrics) => company.freeCashFlowPerShareTTM,
+    subTitle:
+      "Return on assets is the measure of how effective a company is using its assets",
   },
 ];
 
