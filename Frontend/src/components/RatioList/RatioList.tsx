@@ -1,11 +1,9 @@
-import React from "react";
-import { TestDataCompany } from "../Table/testData";
+
 
 type Props = {
   config: any;
   data: any;
-};
-
+}
 const RatioList = ({ config, data }: Props) => {
   const renderedCells = config.map((row: any) => {
     return (
