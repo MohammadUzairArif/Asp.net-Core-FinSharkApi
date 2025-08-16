@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import RatioList from "../RatioList/RatioList";
 import { getBalanceSheet } from "../../api";
-import Table from "../Table/Table";
 import type { CompanyBalanceSheet } from "../../company";
 
 type Props = {};
