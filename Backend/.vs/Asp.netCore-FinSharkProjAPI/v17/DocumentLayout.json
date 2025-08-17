@@ -114,7 +114,8 @@
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T15:56:42.939Z"
+              "WhenOpened": "2025-08-03T15:56:42.939Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -148,9 +149,10 @@
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\Services\\FMPSevice.cs",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Backend\\Asp.netCore-FinSharkProjAPI\\Services\\FMPSevice.cs",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Services\\FMPSevice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T14:39:40.827Z"
+              "WhenOpened": "2025-08-03T14:39:40.827Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -160,7 +162,7 @@
               "RelativeDocumentMoniker": "Asp.netCore-FinSharkProjAPI\\appsettings.json",
               "ToolTip": "C:\\Users\\PMLS\\Desktop\\Asp.net\\Asp.netCore-FinSharkProjAPI\\Backend\\Asp.netCore-FinSharkProjAPI\\appsettings.json",
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-08-03T14:52:06.527Z",
               "EditorCaption": ""
