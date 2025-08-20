@@ -13,7 +13,7 @@ type LoginFormsInputs = {
 };
 
 const validation = Yup.object().shape({
-  userName: Yup.string().required("Username is required"),
+  userName: Yup.string().required("userName is required"),
   password: Yup.string().required("Password is required"),
 });
 
@@ -35,18 +35,18 @@ const LoginPage = (props: Props) => {
       Sign in to your account
     </h1>
     <form className="space-y-5" onSubmit={handleSubmit(handleLogin)}>
-      {/* Username */}
+      {/* userName */}
       <div>
         <label
-          htmlFor="username"
+          htmlFor="userName"
           className="block mb-2 text-sm font-medium text-gray-700"
         >
-          Username
+          userName
         </label>
         <input
           type="text"
-          id="username"
-          placeholder="Enter your username"
+          id="userName"
+          placeholder="Enter your userName"
           className="w-full border border-gray-300 rounded-lg p-2.5 text-gray-900 focus:ring-lightGreen focus:border-lightGreen"
           {...register("userName")}
         />
