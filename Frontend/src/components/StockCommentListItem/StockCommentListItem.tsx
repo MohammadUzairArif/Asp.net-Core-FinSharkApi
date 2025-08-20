@@ -1,6 +1,6 @@
-import React from "react";
-import type { CommentGet } from "../../Models/Comment";
 
+import { FaUserCircle } from "react-icons/fa";
+import type { CommentGet } from "../../Models/Comment";
 
 type Props = {
   comment: CommentGet;
@@ -8,18 +8,18 @@ type Props = {
 
 const StockCommentListItem = ({ comment }: Props) => {
   return (
-    <div className="relative grid grid-cols-1 gap-4 ml-4 p-4 mb-8 w-full border rounded-lg bg-white shadow-lg">
-      <div className="relative flex gap-4">
-        <div className="flex flex-col w-full">
-          <div className="flex flex-row justify-between">
-            <p className="relative text-xl whitespace-nowrap truncate overflow-hidden">
-              {comment.title}
-            </p>
-          </div>
-          <p className="text-dark text-sm">@{comment.createdBy}</p>
+    <div className="relative flex flex-col gap-3 p-5 mb-5 border border-gray-200 rounded-2xl bg-white shadow-md hover:shadow-lg transition-shadow duration-200">
+      {/* Header: Title + User */}
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-medium text-gray-900">{comment.title}</h3>
+        <div className="flex items-center gap-1 text-sm text-gray-500">
+          <FaUserCircle className="text-lightGreen" />
+          {comment.createdBy}
         </div>
       </div>
-      <p className="-mt-4 text-gray-500">{comment.content}</p>
+
+      {/* Content */}
+      <p className="text-gray-600 leading-relaxed">{comment.content}</p>
     </div>
   );
 };

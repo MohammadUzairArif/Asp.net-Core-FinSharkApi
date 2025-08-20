@@ -3,7 +3,8 @@ import type { CommentGet, CommentPost } from "../Models/Comment";
 import { handleError } from "../Helpers/ErrorHandler";
 
 
-const api = "http://localhost:5167/api/comment/";
+
+const api = "https://localhost:7037/api/comment/";
 
 export const commentPostAPI = async (
   title: string,

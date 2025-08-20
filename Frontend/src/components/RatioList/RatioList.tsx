@@ -1,5 +1,5 @@
 
-
+import { v4 as uuidv4 } from 'uuid';
 type Props = {
   config: any;
   data: any;
@@ -7,7 +7,7 @@ type Props = {
 const RatioList = ({ config, data }: Props) => {
   const renderedCells = config.map((row: any) => {
     return (
-     <li className="py-6 sm:py-6">
+     <li className="py-6 sm:py-6" key={uuidv4()}>
         <div className="flex items-center space-x-4">
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-gray-900 truncate">

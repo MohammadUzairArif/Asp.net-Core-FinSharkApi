@@ -1,14 +1,18 @@
-import React, { type SyntheticEvent } from "react";
+import type { SyntheticEvent } from "react";
 import CardPortfolio from "../CardPortfolio/CardPortfolio";
+
+import { v4 as uuidv4 } from "uuid";
 import type { PortfolioGet } from "../../../Models/Portfolio";
 
+
 interface Props {
-  portfolioValues: PortfolioGet[];
+  portfolioValues: PortfolioGet [];
   onPortfolioDelete: (e: SyntheticEvent) => void;
 }
+
 const ListPortfolio = ({ portfolioValues, onPortfolioDelete }: Props) => {
   return (
-   <section id="portfolio">
+    <section id="portfolio">
       <h2 className="mb-3 mt-3 text-3xl font-semibold text-center md:text-4xl">
         My Portfolio
       </h2>
@@ -18,6 +22,7 @@ const ListPortfolio = ({ portfolioValues, onPortfolioDelete }: Props) => {
             portfolioValues.map((portfolioValue) => {
               return (
                 <CardPortfolio
+                  key={uuidv4()}
                   portfolioValue={portfolioValue}
                   onPortfolioDelete={onPortfolioDelete}
                 />

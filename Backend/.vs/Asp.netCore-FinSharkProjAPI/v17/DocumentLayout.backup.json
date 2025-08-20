@@ -69,6 +69,10 @@
           "SelectedChildIndex": 8,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AccountController.cs",
@@ -78,12 +82,7 @@
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T18:14:15.1Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+              "WhenOpened": "2025-08-17T18:14:15.1Z"
             },
             {
               "$type": "Document",
@@ -119,8 +118,7 @@
               "RelativeToolTip": "Asp.netCore-FinSharkProjAPI\\Program.cs",
               "ViewState": "AgIAAIEAAAAAAAAAAAAAAIUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T15:56:42.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-03T15:56:42.939Z"
             },
             {
               "$type": "Document",

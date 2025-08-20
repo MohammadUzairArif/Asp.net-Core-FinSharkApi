@@ -1,13 +1,14 @@
-import React, { useEffect, useState, type ChangeEvent, type SyntheticEvent } from "react";
-
-import type { CompanySearch } from "../../company";
+import React, { useState, type ChangeEvent, type SyntheticEvent, useEffect } from "react"
 import { searchCompanies } from "../../api";
+import { toast } from "react-toastify";
+import type { CompanySearch } from "../../company";
+import type { PortfolioGet } from "../../Models/Portfolio";
+import { portfolioAddAPI, portfolioDeleteAPI, portfolioGetAPI } from "../../Services/PortfolioService";
 import Search from "../../components/Search/Search";
 import ListPortfolio from "../../components/portfolio/ListPortfolio/ListPortfolio";
 import CardList from "../../components/Cardlist/CardList";
-import type { PortfolioGet } from "../../Models/Portfolio";
-import { portfolioAddAPI, portfolioDeleteAPI, portfolioGetAPI } from "../../Services/PortfolioService";
-import { toast } from "react-toastify";
+
+
 
 interface Props {}
 
@@ -19,7 +20,7 @@ const SearchPage = (props: Props) => {
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
 
-   useEffect(() => {
+  useEffect(() => {
     getPortfolio();
   }, []);
 
@@ -38,12 +39,10 @@ const SearchPage = (props: Props) => {
         setPortfolioValues(null);
       });
   };
+
   const onPortfolioCreate = (e: any) => {
     e.preventDefault();
-    //DO NOT DO THIS
-    // portfolioValues.push(event.target[0].value)
-    // setPortfolioValues(portfolioValues);
-   portfolioAddAPI(e.target[0].value)
+    portfolioAddAPI(e.target[0].value)
       .then((res) => {
         if (res?.status === 204) {
           toast.success("Stock added to portfolio!");
@@ -63,7 +62,6 @@ const SearchPage = (props: Props) => {
         getPortfolio();
       }
     });
-    
   };
 
   const onSearchSubmit = async (e: SyntheticEvent) => {
@@ -91,7 +89,6 @@ const SearchPage = (props: Props) => {
         searchResults={searchResult}
         onPortfolioCreate={onPortfolioCreate}
       />
-
       {serverError && <div>Unable to connect to API</div>}
     </>
   );

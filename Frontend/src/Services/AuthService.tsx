@@ -3,11 +3,12 @@ import { handleError } from "../Helpers/ErrorHandler";
 import type { UserProfileToken } from "../Models/User";
 
 
-const api = "http://localhost:5167/api/";
+
+const api = "https://localhost:7037/api/";
 
 export const loginAPI = async (username: string, password: string) => {
   try {
-    const data = await axios.post<UserProfileToken>(api + "account/login", {
+     const data = await axios.post<UserProfileToken>(api + "account/login", {
       username: username,
       password: password,
     });
